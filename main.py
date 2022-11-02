@@ -38,16 +38,6 @@ def search_url(field,state,city,page_num):
         user_spec = user.find('p', class_='prov-specialty').get_text()
         user_addr = user.find('span', class_='addr-text').get_text()
         # this part is for the sake of putting the data into a csv file
-        # with open('out.txt', 'a') as f:
-        #     print(user_name)
-        #     print(user_name, file=f)
-        #     print(user_spec, file=f)
-        #     print(user_site, file=f)
-        #     print(user_tele, file=f)
-        #     print(user_addr, file=f)
-        #     print('\n', file=f)
-        #     print('----------------------------------------------------------', file=f) # separates the users
-        #     print('\n', file=f)
         row = [user_name.encode('utf-8'), user_spec.encode('utf-8'), user_site.encode('utf-8'), user_tele.encode('utf-8'), user_addr.encode('utf-8')]  # construct a row: shown only for example purposes
         ws.append(row)          # could use ws.append(div) since each div is a list
 
